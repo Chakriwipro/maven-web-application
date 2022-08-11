@@ -20,7 +20,7 @@ stages{
 
   stage('CheckOutCode'){
     steps{
-    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
+    git credentialsId: '9e632459-f64d-4380-8586-e853eb946bad', url: 'https://github.com/Chakriwipro/maven-web-application.git'
 	
 	}
   }
@@ -30,13 +30,13 @@ stages{
   sh  "mvn clean package"
   }
   }
-/*
+
  stage('ExecuteSonarQubeReport'){
   steps{
   sh  "mvn clean sonar:sonar"
   }
   }
-  
+ /* 
   stage('UploadArtifactsIntoNexus'){
   steps{
   sh  "mvn clean deploy"
